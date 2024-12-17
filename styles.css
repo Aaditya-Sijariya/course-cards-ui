@@ -1,0 +1,260 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: radial-gradient(circle, #0b38b516, #0b38b588, #0b38b5);
+  background-size: cover;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.main-wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+/* For light mode (default background color is white) */
+@media (prefers-color-scheme: light) {
+  body {
+    background: radial-gradient(circle, #ffffff, #3399ff, #037ef8);
+  }
+}
+
+/* For dark mode (default background color is black) */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: radial-gradient(circle, #000000, #333333, #666666);
+  }
+}
+
+/* Header Section */
+.header {
+  text-align: left;
+  padding: 30px 10px;
+  margin-left : 2rem;
+}
+
+.course-title {
+   color: darkseagreen;
+  
+}
+
+.main-title {
+  font-size: 40px;
+  color: #ffffff;
+  margin: 10px 0;
+  display: inline-block;
+  padding-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 15px;
+  }
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 50;
+}
+
+@media (max-width: 768px) {
+  .description {
+    font-size: 10px;
+  }
+}
+
+
+
+/* Card Section */
+.card-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents wrapping to next line */
+  gap: 40px;
+  overflow-x: hidden; /* Allows horizontal scrolling */
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.card-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background-color: #1a73e8;
+  border-radius: 10px;
+}
+
+.card-container::-webkit-scrollbar-track {
+  background-color: #ddd;
+}
+
+.card-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory; /* Enable snapping */
+  width: 100%;
+}
+
+
+.card-odd {
+  background: #fff;
+  border-top-left-radius: 10px; /* Rounded corner on the top-left */
+  border-top-right-radius: 10px; /* Rounded corner on the top-right */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 250px;
+  min-width: 250px; /* Ensures all cards stay the same width */
+  margin-bottom: 50px;
+  transition: transform 0.3s ease;
+}
+
+.card-even {
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 250px;
+  min-width: 250px; /* Ensures all cards stay the same width */
+  margin-bottom: 50px;
+  transition: transform 0.3s ease;
+}
+
+.card-odd:hover {
+  transform: translateY(-10px);
+}
+
+.card-even:hover {
+  transform: translateY(-10px);
+}
+
+.card-header {
+  height: 250px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.icons {
+  position: absolute;
+  left: 44%; /* Move the left edge to the center of the parent */
+    transform: translateX(-50%);
+    white-space: nowrap;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.icons img {
+  
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.card-body {
+  padding: 20px;
+  color: #000000;
+}
+
+.card-body h4 {
+  margin: 10px 0;
+}
+
+.sales {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #777;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.course-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: darkseagreen;
+  font-weight: 600;
+}
+
+.course-rating {
+  border: 1px;
+  background-color: 		#383838;
+  border-radius: 50px;
+  border-width: 20px;
+  padding: 5px 10px 5px 5px;
+  color: white;
+}
+
+.course-name {
+  margin-top: 20px;
+}
+
+.course-desc {
+  color: grey;
+  margin-top: 15px;
+}
+
+.price {
+  margin: 15px 0px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.new-price {
+  color: darkorange;
+  font-weight: bold;
+}
+
+.learn-more {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px 10px 20px; 
+  color: darkseagreen;
+  border: 1px solid grey;
+  border-color: grey;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: #ffffff;
+}
